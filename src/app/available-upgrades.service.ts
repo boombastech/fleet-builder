@@ -4,9 +4,11 @@ import {FactionFilter, UpgradeTypeFilter} from './filters';
 
 @Injectable()
 export class AvailableUpgradesService {
-  private upgradeItems: UpgradeItem[] = [];
 
-  public search(upgradeType: UpgradeType, faction: Faction = null): UpgradeItem[] {
+  constructor(private upgradeItems: UpgradeItem[] = []) {
+  }
+
+  public search(upgradeType: UpgradeType = null, faction: Faction = null): UpgradeItem[] {
     const upgradeTypeFilter = new UpgradeTypeFilter(upgradeType);
     const factionFilter = new FactionFilter(faction);
 

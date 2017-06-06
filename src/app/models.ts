@@ -3,12 +3,12 @@ export class Fleet {
   }
 }
 
-export class ArmadaThing {
+export class ArmadaObject {
   constructor(public name: string, public points: number, public faction: Faction = null, public unique: boolean = false) {
   }
 }
 
-export class Ship extends ArmadaThing {
+export class Ship extends ArmadaObject {
   constructor(name: string, points: number, faction: Faction = null, unique: boolean = false, public possibleUpgrades: Upgrade[] = []) {
     super(name, points, faction, unique);
   }
@@ -19,13 +19,13 @@ export class Upgrade {
   }
 }
 
-export class UpgradeItem extends ArmadaThing {
+export class UpgradeItem extends ArmadaObject {
   constructor(name: string, points: number, faction: Faction = null, unique: boolean = false, public upgradeType: UpgradeType) {
     super(name, points, faction, unique);
   }
 }
 
-export class Squadron extends ArmadaThing {
+export class Squadron extends ArmadaObject {
   constructor(name: string, points: number, faction: Faction, unique: boolean = false) {
     super(name, points, faction, unique);
   }
@@ -36,5 +36,17 @@ export enum Faction {
 }
 
 export enum UpgradeType {
-  commander, officer
+  commander,
+  officer,
+  title,
+  offensiveRetrofit,
+  defensiveRetrofit,
+  experimentalRetrofit,
+  fleetCommand,
+  fleetSupport,
+  ionCannons,
+  ordinance,
+  supportTeam,
+  turbolasers,
+  weaponsTeam
 }

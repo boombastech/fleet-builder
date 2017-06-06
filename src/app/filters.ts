@@ -1,15 +1,15 @@
-import {ArmadaThing, Faction, UpgradeItem, UpgradeType} from './models';
+import {ArmadaObject, Faction, UpgradeItem, UpgradeType} from './models';
 
-interface Filter<T extends ArmadaThing> {
+interface Filter<T extends ArmadaObject> {
   filter(options: T): boolean;
 }
 
 
-export class FactionFilter implements Filter<ArmadaThing> {
+export class FactionFilter implements Filter<ArmadaObject> {
   constructor(private faction: Faction = null) {
   }
 
-  public filter(option: ArmadaThing): boolean {
+  public filter(option: ArmadaObject): boolean {
     if (this.faction == null) {
       return true;
     }

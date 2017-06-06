@@ -4,7 +4,9 @@ import {FactionFilter} from './filters';
 
 @Injectable()
 export class AvailableShipsService {
-  private ships: Ship[] = [];
+
+  constructor(private ships: Ship[] = []) {
+  }
 
   public search(faction: Faction = null): Ship[] {
     const factionFilter: FactionFilter = new FactionFilter(faction);
