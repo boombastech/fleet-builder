@@ -1,5 +1,5 @@
 export class Fleet {
-  constructor(public ships: Ship[] = [], public squadrons: Squadron[] = []) {
+  constructor(public id: number, public faction: Faction, public name: string = 'New Fleet', public ships: Ship[] = [], public squadrons: Squadron[] = []) {
   }
 }
 
